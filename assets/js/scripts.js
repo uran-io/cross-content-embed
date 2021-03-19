@@ -2,10 +2,12 @@
 
     var updateHeight = function () {
 
+        var target = window.location.hash.replace('#', '') || '*';
+
         // WE DON'T KNOW WHO INVOKE US, SO WE USE '*'
         parent.postMessage({
             height: document.body.clientHeight
-        }, '*');
+        }, target);
 
     }
     var timer;
